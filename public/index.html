@@ -22,13 +22,9 @@
             console.log('Perdimos conexión')
         });
 
-
-        socket.emit('mensaje', {
-            nombre: 'AJ'
-        });
-
-        socket.on('mensaje', function(payload) {
-            console.log(payload);
+        socket.on('active-bands', (bands) => {
+            console.clear();
+            console.table(bands);
         });
     </script>
 </body>
